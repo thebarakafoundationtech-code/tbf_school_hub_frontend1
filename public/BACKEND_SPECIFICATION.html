@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Technical Architecture & Handover Specification</title>
+  <style>
+    :root {
+      --primary: #15223F;
+      --secondary: #D69B67;
+      --accent: #64B5D6;
+      --bg-light: #FAF6EE;
+      --text-dark: #1E293B;
+      --border-color: #E2E8F0;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-dark);
+      background-color: #F8FAFC;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      padding: 48px;
+    }
+
+    .header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--bg-light);
+      color: var(--secondary);
+      border: 1px solid rgba(214, 155, 103, 0.4);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #64748B;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #0E1729;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-light);
+    }
+
+    h2 {
+      font-size: 20px;
+      color: var(--primary);
+      border-left: 4px solid var(--secondary);
+      padding-left: 12px;
+      margin: 36px 0 16px 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: var(--primary);
+      margin: 20px 0 10px 0;
+    }
+
+    p, li {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .diagram-box {
+      background: #0F172A;
+      color: #38BDF8;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 20px 0;
+      line-height: 1.4;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: #F8FAFC;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    tr:hover {
+      background-color: #FAF6EE;
+    }
+
+    code {
+      background: #F1F5F9;
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .card {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      background: #FFFFFF;
+    }
+
+    .card h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      .btn-group {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div>
+        <span class="badge">Engineering Handover Document</span>
+        <h1>Backend Technical Specification Blueprint</h1>
+        <p class="meta">Secondary School E-Learning Platform & AI Companion (Baraka) | Version 1.0.0</p>
+      </div>
+      <div class="btn-group">
+        <button onclick="window.print()" class="btn">🖨️ Print / Save as PDF</button>
+        <a href="/public/BACKEND_SPECIFICATION.md" download class="btn btn-secondary">📥 Download Markdown (.md)</a>
+      </div>
+    </div>
+
+    <h2>1. Executive Summary & Core Platform Vision</h2>
+    <p>
+      This document serves as the comprehensive backend technical specification for developers building the full-scale production backend for the Tanzanian & East African Secondary School Digital Learning Ecosystem.
+    </p>
+    <p>
+      The system accommodates three core user personas: <strong>Students (Form 1 to 6)</strong>, <strong>Teachers (Mwalimu)</strong>, and <strong>School Administrators (Headmasters)</strong>.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🤖 Baraka AI Study Companion</h4>
+        <p>Gemini-powered tutor grounded in the NECTA secondary syllabus. Supports Swahili/English bilingual explanations and math step solvers.</p>
+      </div>
+      <div class="card">
+        <h4>🔴 Real-Time Live Sessions</h4>
+        <p>Cross-browser classroom streaming with Server-Sent Events (SSE). Synchronizes presentation slides, live whiteboard, and pop quizzes.</p>
+      </div>
+      <div class="card">
+        <h4>🔑 Dual Authentication System</h4>
+        <p>Supports instant Google OAuth 2.0 verification and school registration code authentication with Form-level classification.</p>
+      </div>
+      <div class="card">
+        <h4>📲 Parent SMS & Mobile Money</h4>
+        <p>Automated SMS alerts for parents via African gateways (Beem Africa) and fee tracking via M-Pesa / Tigo Pesa integration.</p>
+      </div>
+    </div>
+
+    <h2>2. High-Level Architecture Diagram</h2>
+    <div class="diagram-box">
++-----------------------------------------------------------------------------------+
+|                                  CLIENT LAYER                                     |
+|   +-----------------------+   +------------------------+   +------------------+   |
+|   |   Student Dashboard   |   |   Teacher Dashboard    |   | Admin Dashboard  |   |
+|   +-----------------------+   +------------------------+   +------------------+   |
++-----------------------------------------|-----------------------------------------+
+                                          | HTTPS / SSE / WebSockets
+                                          v
++-----------------------------------------------------------------------------------+
+|                              BACKEND API GATEWAY (Node.js)                         |
+|  +-------------------+  +---------------------+  +-----------------------------+  |
+|  | Auth & OAuth      |  | AI Service          |  | Real-Time SSE Broadcast     |  |
+|  | Controller        |  | (Gemini 2.5 Flash)  |  | Relay Engine                |  |
+|  +-------------------+  +---------------------+  +-----------------------------+  |
+|  +-------------------+  +---------------------+  +-----------------------------+  |
+|  | Classroom & Quiz  |  | Payment & SMS       |  | Analytics & Student         |  |
+|  | Management        |  | Gateway Proxy       |  | Record Services             |  |
+|  +-------------------+  +---------------------+  +-----------------------------+  |
++-----------------------------------------|-----------------------------------------+
+                                          |
+        +---------------------------------+--------------------------------+
+        |                                 |                                |
+        v                                 v                                v
++-------------------+           +-------------------+            +-------------------+
+| Primary Database  |           | External AI Engine|            | Third-Party       |
+| PostgreSQL /      |           | Google Gemini API |            | Services          |
+| Firebase Firestore|           | (@google/genai)   |            | Google OAuth 2.0  |
+|                   |           |                   |            | M-Pesa / SMS APIs |
++-------------------+           +-------------------+            +-------------------+
+    </div>
+
+    <h2>3. Database Schema & Data Models</h2>
+
+    <h3>3.1 Users Table (`users` / `students`)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Data Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>id</code></td>
+          <td>VARCHAR(64) [PK]</td>
+          <td>Unique User Identifier / Hash</td>
+        </tr>
+        <tr>
+          <td><code>reg_no</code></td>
+          <td>VARCHAR(32)</td>
+          <td>School Reg No (e.g., <code>BSS-2026-891</code>)</td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>VARCHAR(128)</td>
+          <td>Full Name</td>
+        </tr>
+        <tr>
+          <td><code>email</code></td>
+          <td>VARCHAR(128)</td>
+          <td>Email address</td>
+        </tr>
+        <tr>
+          <td><code>role</code></td>
+          <td>ENUM</td>
+          <td><code>'student'</code>, <code>'teacher'</code>, <code>'admin'</code></td>
+        </tr>
+        <tr>
+          <td><code>class_level</code></td>
+          <td>VARCHAR(32)</td>
+          <td>Grade level (<code>Form 1</code> through <code>Form 6</code>)</td>
+        </tr>
+        <tr>
+          <td><code>parent_phone</code></td>
+          <td>VARCHAR(32)</td>
+          <td>Parent mobile for SMS notifications</td>
+        </tr>
+        <tr>
+          <td><code>fees_paid</code></td>
+          <td>BOOLEAN</td>
+          <td>Tuition balance status flag</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 Live Session State (`live_sessions`)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Data Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>id</code></td>
+          <td>VARCHAR(64) [PK]</td>
+          <td>Session Identifier</td>
+        </tr>
+        <tr>
+          <td><code>is_active</code></td>
+          <td>BOOLEAN</td>
+          <td>Live stream active indicator</td>
+        </tr>
+        <tr>
+          <td><code>subject</code> & <code>topic</code></td>
+          <td>VARCHAR(128)</td>
+          <td>Subject and lesson topic name</td>
+        </tr>
+        <tr>
+          <td><code>whiteboard_text</code></td>
+          <td>TEXT</td>
+          <td>Live markdown canvas contents</td>
+        </tr>
+        <tr>
+          <td><code>presentation_slide_index</code></td>
+          <td>INT</td>
+          <td>Active slide position for students</td>
+        </tr>
+        <tr>
+          <td><code>active_quiz</code></td>
+          <td>JSONB</td>
+          <td>Question, options, correct index, and submission counts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. API Endpoint Specifications</h2>
+    <ul>
+      <li><code>GET /api/auth/url</code> — Generates Google OAuth 2.0 authorization redirect link.</li>
+      <li><code>POST /api/chat</code> — Proxies queries to Google Gemini API (<code>gemini-2.5-flash</code>) with NECTA study prompts.</li>
+      <li><code>GET /api/live-session</code> — Retrieves current live classroom state.</li>
+      <li><code>POST /api/live-session</code> — Updates classroom state (teacher) and broadcasts to all clients.</li>
+      <li><code>GET /api/live-session/stream</code> — Server-Sent Events (SSE) stream for instant cross-device updates.</li>
+    </ul>
+
+    <h2>5. Handover Checklist for Developers</h2>
+    <ol>
+      <li>Set up Node.js v20+ project with TypeScript and Express or NestJS.</li>
+      <li>Configure Google GenAI SDK with <code>GEMINI_API_KEY</code> environment variable.</li>
+      <li>Deploy PostgreSQL database and run migrations based on Section 3 schemas.</li>
+      <li>Configure SSE headers (<code>Content-Type: text/event-stream</code>) for low-latency session syncing.</li>
+      <li>Implement Google OAuth 2.0 secrets in <code>.env</code>.</li>
+    </ol>
+  </div>
+
+</body>
+</html>
