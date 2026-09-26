@@ -1,0 +1,443 @@
+{
+  "users": [],
+  "students": [
+    {
+      "id": "stud-1790098105521-7959",
+      "student_id": "TBF/001/0001/2026",
+      "regNo": "TBF/001/0001/2026",
+      "reg_no": "TBF/001/0001/2026",
+      "first_name": "Rehema",
+      "last_name": "Mollel",
+      "fname": "Rehema",
+      "lname": "Mollel",
+      "name": "Rehema Mollel",
+      "email": "rehema.m@school.tz",
+      "phone": "255766554433",
+      "parentContact": "255766554433",
+      "parent_contact": "255766554433",
+      "class": "Form 2B",
+      "study_level": "Ordinary Level",
+      "curriculum": "NECTA",
+      "form_name": "Form 2",
+      "status": "Active",
+      "gender": "M",
+      "age": 15,
+      "progress": 0,
+      "lastActive": "Just imported",
+      "default_password": "ChangeMe123!",
+      "created_at": "2026-09-22T17:28:25.521Z"
+    },
+    {
+      "id": "stud-1790098105520-4679",
+      "student_id": "TBF/001/0002/2026",
+      "regNo": "TBF/001/0002/2026",
+      "reg_no": "TBF/001/0002/2026",
+      "first_name": "Emanuel",
+      "last_name": "Kavishe",
+      "fname": "Emanuel",
+      "lname": "Kavishe",
+      "name": "Emanuel Kavishe",
+      "email": "emanuel.k@school.tz",
+      "phone": "255711223344",
+      "parentContact": "255711223344",
+      "parent_contact": "255711223344",
+      "class": "Form 2B",
+      "study_level": "Ordinary Level",
+      "curriculum": "NECTA",
+      "form_name": "Form 2",
+      "status": "Active",
+      "gender": "M",
+      "age": 15,
+      "progress": 0,
+      "lastActive": "Just imported",
+      "default_password": "ChangeMe123!",
+      "created_at": "2026-09-22T17:28:25.520Z"
+    },
+    {
+      "id": "stud_1789573389769",
+      "student_id": "TBF/011/0001/2026",
+      "regNo": "TBF/011/0001/2026",
+      "reg_no": "TBF/011/0001/2026",
+      "name": "Salma Mussa",
+      "fname": "Salma",
+      "lname": "Mussa",
+      "email": "salma@test.edu.tz",
+      "parentContact": "",
+      "class": "Form 3",
+      "curriculum": "Tanzania National (NECTA)",
+      "photo_url": "",
+      "photoUrl": "",
+      "progress": 0,
+      "lastActive": "Today",
+      "status": "Active",
+      "school": "Azania Secondary School",
+      "schoolName": "Azania Secondary School"
+    },
+    {
+      "id": "solo_mflyofw5",
+      "student_id": "TBF/0003/2026",
+      "regNo": "TBF/0003/2026",
+      "reg_no": "TBF/0003/2026",
+      "name": "Salim Juma",
+      "fname": "Salim",
+      "lname": "Juma",
+      "email": "salim.solo@test.com",
+      "parentContact": "+255712345678",
+      "phone": "+255712345678",
+      "class": "Form 2",
+      "curriculum": "Tanzania National (NECTA)",
+      "school": "",
+      "schoolName": "",
+      "photo_url": "",
+      "photoUrl": "",
+      "progress": 0,
+      "lastActive": "Today",
+      "status": "Active"
+    },
+    {
+      "id": "solo_w3nnlxt6",
+      "student_id": "TBF/0004/2026",
+      "regNo": "TBF/0004/2026",
+      "reg_no": "TBF/0004/2026",
+      "name": "Juma Bakari",
+      "fname": "Juma",
+      "lname": "Bakari",
+      "email": "solotest@gmail.com",
+      "parentContact": "+255712345678",
+      "phone": "+255712345678",
+      "class": "Form 1",
+      "curriculum": "Tanzania National (NECTA)",
+      "school": "",
+      "schoolName": "",
+      "photo_url": "",
+      "photoUrl": "",
+      "progress": 0,
+      "lastActive": "Today",
+      "status": "Active"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "teach-1",
+      "name": "Mwalimu Juma",
+      "firstName": "Juma",
+      "lastName": "Kassim",
+      "email": "juma.k@school.tz",
+      "subjects": "Mathematics",
+      "classes": "Form 1A; Form 2B",
+      "status": "Active",
+      "role": "Normal"
+    },
+    {
+      "id": "teach-2",
+      "name": "Mwalimu Amina",
+      "firstName": "Amina",
+      "lastName": "Salim",
+      "email": "amina.s@school.tz",
+      "subjects": "English",
+      "classes": "Form 1A; Form 3A",
+      "status": "Active",
+      "role": "Normal"
+    },
+    {
+      "id": "teach-3",
+      "name": "Mwalimu Baraka",
+      "firstName": "Baraka",
+      "lastName": "Mussa",
+      "email": "baraka.m@school.tz",
+      "subjects": "Biology",
+      "classes": "Form 2B; Form 4A",
+      "status": "Active",
+      "role": "Normal"
+    },
+    {
+      "id": "teach-4",
+      "name": "Mwalimu Sarah",
+      "firstName": "Sarah",
+      "lastName": "Massawe",
+      "email": "sarah.m@school.tz",
+      "subjects": "Chemistry",
+      "classes": "Form 3A; Form 4A",
+      "status": "Active",
+      "role": "Normal"
+    }
+  ],
+  "classes": [
+    {
+      "id": "cls-1790098093012",
+      "name": "Form 4 Stream C",
+      "class_name": "Form 4 Stream C",
+      "teacher": "TBD",
+      "studentsCount": 0,
+      "avgScore": 75,
+      "subjects": "General"
+    },
+    {
+      "id": "cls-1790098004173",
+      "name": "Form 4 Stream C",
+      "class_name": "Form 4 Stream C",
+      "teacher": "TBD",
+      "studentsCount": 0,
+      "avgScore": 75,
+      "subjects": "General"
+    },
+    {
+      "id": "cls-1790098105520-561",
+      "name": "Form 2B",
+      "class_name": "Form 2B",
+      "teacher": "TBD",
+      "studentsCount": 2,
+      "avgScore": 75,
+      "subjects": "General",
+      "enrolled_students": [
+        "stud-1790098105520-4679",
+        "stud-1790098105521-7959"
+      ]
+    }
+  ],
+  "classJoinRequests": [],
+  "materials": [
+    {
+      "id": "mat_book_1789575208534",
+      "title": "Test Biology Book",
+      "subject": "Biology",
+      "classes": "All Forms",
+      "form_num": 1,
+      "category": "Open Book",
+      "uploadedAt": "Today",
+      "templateType": "notes",
+      "rawText": "Test Biology Book\nBy Tanzania Science\n\nDescription: Free open-source educational reader.\n\nRead online: ",
+      "visibility": "public",
+      "uploadedBy": "Open Digital Library",
+      "isTeacherUpload": false,
+      "arrangedContent": {
+        "summary": "Digital study textbook \"Test Biology Book\" by Tanzania Science. Available for open reading and AI revision.",
+        "keyPoints": [
+          "Official open educational material added to your study shelf.",
+          "Author: Tanzania Science (English / Kiswahili).",
+          "Study Level: Secondary Form 1–4.",
+          "Read online at: Open Library"
+        ],
+        "definitions": [
+          {
+            "term": "Digital Reader",
+            "definition": "A curriculum-aligned digital textbook or storybook accessible for online reading."
+          },
+          {
+            "term": "Open Educational Resource (OER)",
+            "definition": "Learning materials licensed under open licenses for free public educational use."
+          }
+        ]
+      },
+      "quizQuestions": [
+        {
+          "question": "What is the primary subject of the book \"Test Biology Book\"?",
+          "options": [
+            "Biology",
+            "Automotive Repair",
+            "Advanced Astrophysics",
+            "Ancient Numismatics"
+          ],
+          "correctIndex": 0,
+          "explanation": "This book is categorized under Biology for secondary learners."
+        },
+        {
+          "question": "Who is the author or compiler of \"Test Biology Book\"?",
+          "options": [
+            "Tanzania Science",
+            "Anonymous",
+            "Unknown Entity",
+            "Private Collector"
+          ],
+          "correctIndex": 0,
+          "explanation": "The book was written/compiled by Tanzania Science."
+        }
+      ]
+    }
+  ],
+  "timetable": [],
+  "quizzes": [],
+  "quizResults": [],
+  "assignments": [],
+  "attendance": [],
+  "notifications": [],
+  "discussions": [
+    {
+      "id": "th-1",
+      "title": "Welcome to Academic Discussion Forum",
+      "content": "Karibuni wote kwenye jukwaa la masomo! Feel free to ask questions about Mathematics, Sciences, Languages and Humanities.",
+      "author": {
+        "id": "tch-1",
+        "first_name": "Sarah",
+        "last_name": "Mwangi",
+        "role": "teacher"
+      },
+      "class_name": "All Classes",
+      "subject": "General",
+      "upvotes": 5,
+      "replies": [
+        {
+          "id": "rep-1",
+          "thread_id": "th-1",
+          "content": "Asante Mwalimu! We are ready for this term's topics.",
+          "author": {
+            "id": "std-1",
+            "first_name": "Rehema",
+            "last_name": "Mollel",
+            "role": "student"
+          },
+          "created_at": "2026-09-24T18:18:38.541Z"
+        }
+      ],
+      "created_at": "2026-09-24T17:48:38.541Z"
+    }
+  ],
+  "deletedStudentIds": [
+    "STD-TEST-9999"
+  ],
+  "deletedTeacherIds": [
+    "test_teacher@barakahub.edu.tz"
+  ],
+  "school": {
+    "id": "sch_61p7ek9u",
+    "name": "Mihama Secondary",
+    "registration_number": "TBF/MIH/016/2026",
+    "region": "Dar es Salaam",
+    "region_code": "",
+    "district": "",
+    "district_code": "",
+    "phone": "",
+    "school_type": "secondary",
+    "headmaster_name": "Headmaster",
+    "verification_status": "verified"
+  },
+  "schools": [
+    {
+      "id": "sch_baraka_001",
+      "name": "Baraka Secondary School",
+      "registration_number": "TBF/BAR/001/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_kibaha_002",
+      "name": "Kibaha Secondary School",
+      "registration_number": "TBF/KIB/002/2026",
+      "region": "Pwani",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_ilboru_003",
+      "name": "Ilboru Secondary School",
+      "registration_number": "TBF/ILB/003/2026",
+      "region": "Arusha",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_mzumbe_004",
+      "name": "Mzumbe Secondary School",
+      "registration_number": "TBF/MZU/004/2026",
+      "region": "Morogoro",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_tabora_005",
+      "name": "Tabora Boys' Secondary School",
+      "registration_number": "TBF/TAB/005/2026",
+      "region": "Tabora",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_kilakala_006",
+      "name": "Kilakala Secondary School",
+      "registration_number": "TBF/KIL/006/2026",
+      "region": "Morogoro",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_feza_007",
+      "name": "Feza Boys Secondary School",
+      "registration_number": "TBF/FEZ/007/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_marian_008",
+      "name": "Marian Boys High School",
+      "registration_number": "TBF/MAR/008/2026",
+      "region": "Pwani",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_loyola_009",
+      "name": "Loyola High School",
+      "registration_number": "TBF/LOY/009/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_jangwani_010",
+      "name": "Jangwani Secondary School",
+      "registration_number": "TBF/JAN/010/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_azania_011",
+      "name": "Azania Secondary School",
+      "registration_number": "TBF/AZA/011/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_tambaza_012",
+      "name": "Tambaza Secondary School",
+      "registration_number": "TBF/TAM/012/2026",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_stfrancis_013",
+      "name": "St. Francis Girls Secondary School",
+      "registration_number": "TBF/STF/013/2026",
+      "region": "Mbeya",
+      "school_type": "Secondary"
+    },
+    {
+      "id": "sch_1789573412905",
+      "name": "Shaban Robert Secondary School",
+      "region": "Dar es Salaam",
+      "school_type": "Secondary",
+      "registration_number": "TBF/SHA/014/2026",
+      "email": "",
+      "verification_status": "verified"
+    },
+    {
+      "id": "sch_9kghgkfx",
+      "name": "mihama",
+      "registration_number": "TBF/MIH/015/2026",
+      "region": "Dar es Salaam",
+      "region_code": "",
+      "district": "",
+      "district_code": "",
+      "phone": "",
+      "school_type": "Secondary",
+      "headmaster_name": "Headmaster",
+      "verification_status": "verified"
+    },
+    {
+      "id": "sch_61p7ek9u",
+      "name": "Mihama Secondary",
+      "registration_number": "TBF/MIH/016/2026",
+      "region": "Dar es Salaam",
+      "region_code": "",
+      "district": "",
+      "district_code": "",
+      "phone": "",
+      "school_type": "secondary",
+      "headmaster_name": "Headmaster",
+      "verification_status": "verified"
+    }
+  ],
+  "phoneVerificationCodes": {}
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TBF School Hub",
+  "description": "The AI-powered school hub for every student in Africa. Features interactive study dashboards, study tools, libraries, practices, virtual labs, progress reports, and an administrator dashboard.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
