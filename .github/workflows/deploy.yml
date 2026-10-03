@@ -1,0 +1,36 @@
+name: Deploy Frontend to Production Server
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy via SSH
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Execute remote SSH deployment commands
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_SSH_PORT || 22 }}
+        script: |
+          set -e
+          cd /var/www/baraka-frontend
+          
+          echo "⬇️ Pulling latest changes from git..."
+          git pull origin main
+          
+          echo "🐳 Rebuilding and restarting Docker container..."
+          docker compose up -d --build
+          
+          echo "🧹 Cleaning up dangling images..."
+          docker image prune -f
+          
+          echo "✅ Deployment completed successfully!"
