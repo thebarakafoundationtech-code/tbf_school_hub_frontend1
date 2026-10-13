@@ -1,0 +1,55 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/:path*"
+    },
+    {
+      "source": "/api/ask-baraka",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/ask-baraka"
+    },
+    {
+      "source": "/api/arrange-material",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/arrange-material"
+    },
+    {
+      "source": "/api/send-verification-email",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/send-verification-email"
+    },
+    {
+      "source": "/api/auth/url",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/url"
+    },
+    {
+      "source": "/api/auth/me",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/me"
+    },
+    {
+      "source": "/api/auth/login",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/login"
+    },
+    {
+      "source": "/api/auth/register",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/register"
+    },
+    {
+      "source": "/api/auth/register/student",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/register/student"
+    },
+    {
+      "source": "/api/auth/register/school",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/auth/register/school"
+    },
+    {
+      "source": "/api/health",
+      "destination": "https://schubapi.thebarakafoundation.or.tz/api/v1/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
