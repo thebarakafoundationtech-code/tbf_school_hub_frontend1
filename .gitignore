@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+*.zip
+*.7z
+*.rar
+public/books/
+data/books/
+data/uploads/
+data/books_extracted*/
+.env*
+!.env.example
